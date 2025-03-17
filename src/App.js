@@ -3,12 +3,14 @@ import AboutUs from "./components/aboutus";
 import { GridBackgroundDemo } from "./components/home";
 import { BackgroundBeamsDemo } from "./components/waitlist";
 import { Testimonials } from "./components/testimonials";
+import { Features } from "./components/features";
 
 function App() {
   return (
     <main>
       <GridBackgroundDemo />
       <AboutUs />
+      <Features />
       <Testimonials />
       <BackgroundBeamsDemo />
     </main>
