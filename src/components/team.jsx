@@ -4,44 +4,30 @@ import { Github, Linkedin } from "lucide-react";
 export function Team() {
   const teamMembers = [
     {
-      name: "Alex Chen",
-      role: "Lead Developer",
-      image: "https://source.unsplash.com/200x200/?portrait?1", // Using Unsplash for placeholder images
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      name: "Yash Aswale",
+      role: "React Developer",
+      image: "/Img2.jpg", // Using Unsplash for placeholder images
+      github: "https://github.com/Yashaswale",
+      linkedin: "www.linkedin.com/in/yash-aswale-591a69249",
     },
     {
-      name: "Priya Sharma",
-      role: "UI/UX Designer",
-      image: "https://source.unsplash.com/200x200/?portrait?2",
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      name: "Niraj Tupsundar",
+      role: "Angular Developer",
+      image: "Niraj.jpg",
+      github: "https://github.com/Niraj-2803",
+      linkedin: "https://www.linkedin.com/in/niraj-pawan-tupsundar-20540022a/",
     },
-    {
-      name: "John Doe",
-      role: "Backend Developer",
-      image: "https://source.unsplash.com/200x200/?portrait?3",
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    },
-    {
-      name: "Sarah Wilson",
-      role: "Project Manager",
-      image: "https://source.unsplash.com/200x200/?portrait?4",
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    }
   ];
 
   return (
-    <footer className="w-full bg-black border-t border-gray-800 py-12">
+    <footer className="w-full bg-black border-gray-800 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-white mb-2">Meet Our Team</h2>
           <div className="h-1 w-20 bg-purple-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:max-w-sm lg:max-w-xl mx-auto">
           {teamMembers.map((member, index) => (
             <div
               key={index}

@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Testimonials() {
   return (
-    <section className="bg-gray-900 text-white py-8 sm:py-12 md:py-16">
+    <section className="bg-black text-white py-8 sm:py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
           <h1 className="text-3xl sm:text-4xl md:text-4xl font-semibold leading-none text-center text-white">
