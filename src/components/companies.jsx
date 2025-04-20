@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react"
 
 export default function TrustedPartners() {
   return (
-    <div className="w-full bg-black text-white py-16 px-8 rounded-lg">
+    <div id="features" className="w-full bg-black text-white py-16 px-8 rounded-lg">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold tracking-tight text-white">Our Trusted Partners</h2>

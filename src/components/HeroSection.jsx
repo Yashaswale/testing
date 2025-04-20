@@ -98,56 +98,57 @@ const Terminal = (props) => (
   </IconWrapper>
 );
 
+const Calendar = (props) => (
+  <IconWrapper {...props}>
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+    <line x1="16" y1="2" x2="16" y2="6" />
+    <line x1="8" y1="2" x2="8" y2="6" />
+    <line x1="3" y1="10" x2="21" y2="10" />
+  </IconWrapper>
+)
+
 // TypewriterCode component
 function TypewriterCode() {
   const codeLines = [
-    "// Challenge: Find the optimal path in a grid",
-    "function solveOptimalPath(grid) {",
-    "  const rows = grid.length;",
-    "  const cols = grid[0].length;",
-    "  const dp = Array(rows).fill().map(() => Array(cols).fill(0));",
-    "",
-    "  // Initialize the starting point",
-    "  dp[0][0] = grid[0][0];",
-    "",
-    "  // Fill the first row",
-    "  for (let j = 1; j < cols; j++) {",
-    "    dp[0][j] = dp[0][j-1] + grid[0][j];",
-    "  }",
-    "",
-    "  // Your solution here...",
-    "  // Time remaining: 2d 14h 22m",
-  ];
+    "// Start your fresh semester with us...",
+    "function prepareForPlacement() {",
+    "  const skills = ['DSA', 'Problem Solving', 'Aptitude'];",
+    "  const companies = getTopCompanies();",
+    "  const path = choosePath('Full Stack', 'AI/ML', 'Android');",
+    "  ",
+    "  return { skills, companies, path };",
+    "  // Registration open now!",
+  ]
 
-  const [displayedLines, setDisplayedLines] = useState([]);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [currentChar, setCurrentChar] = useState(0);
+  const [displayedLines, setDisplayedLines] = useState([])
+  const [currentLine, setCurrentLine] = useState(0)
+  const [currentChar, setCurrentChar] = useState(0)
 
   useEffect(() => {
-    if (currentLine >= codeLines.length) return;
+    if (currentLine >= codeLines.length) return
 
     const timer = setTimeout(() => {
       if (currentChar < codeLines[currentLine].length) {
         setDisplayedLines((prev) => {
-          const newLines = [...prev];
+          const newLines = [...prev]
           if (newLines.length <= currentLine) {
-            newLines.push("");
+            newLines.push("")
           }
-          newLines[currentLine] = codeLines[currentLine].substring(0, currentChar + 1);
-          return newLines;
-        });
-        setCurrentChar((prev) => prev + 1);
+          newLines[currentLine] = codeLines[currentLine].substring(0, currentChar + 1)
+          return newLines
+        })
+        setCurrentChar((prev) => prev + 1)
       } else {
-        setCurrentLine((prev) => prev + 1);
-        setCurrentChar(0);
+        setCurrentLine((prev) => prev + 1)
+        setCurrentChar(0)
       }
-    }, 30);
+    }, 30)
 
-    return () => clearTimeout(timer);
-  }, [currentLine, currentChar]);
+    return () => clearTimeout(timer)
+  }, [currentLine, currentChar])
 
   return (
-    <div className="min-h-[200px]">
+    <div id="home" className="min-h-[200px]">
       {displayedLines.map((line, index) => (
         <div
           key={index}
@@ -205,23 +206,23 @@ export default function HeroSection() {
               weekly leaderboard to prove your programming prowess.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white border-none">
-                Start Coding <ChevronRight className="ml-2 h-4 w-4" />
+            <div className="flex flex-row gap-3">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white border-none flex items-center">
+                <span>Register Now</span> <ChevronRight className="ml-1 h-4 w-4 inline-block" />
               </Button>
-              <Button size="lg" variant="outline" className="border-purple-700 text-purple-300 hover:bg-purple-900/30">
-                View Challenges
+              <Button variant="outline" className="border-purple-700 text-purple-300 hover:bg-purple-900/30">
+                Learn More
               </Button>
             </div>
 
             <div className="flex flex-wrap gap-6 pt-4">
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-purple-400" />
-                <span className="text-gray-300">5K+ Coders</span>
+                <span className="text-gray-300">Year Wise</span>
               </div>
               <div className="flex items-center gap-2">
                 <Code2 className="h-5 w-5 text-purple-400" />
-                <span className="text-gray-300">200+ Challenges</span>
+                <span className="text-gray-300">College Level</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="h-5 w-5 text-purple-400" />
@@ -232,44 +233,65 @@ export default function HeroSection() {
 
           <div className="relative">
             {/* Terminal-like editor */}
-            <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-2xl overflow-hidden">
-              <div className="bg-gray-800 px-4 py-2 flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                <div className="ml-2 text-sm text-gray-400 font-mono">challenge.js</div>
+            <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-2xl overflow-hidden max-h-[380px]">
+              <div className="bg-gray-800 px-4 py-1.5 flex items-center gap-2">
+                <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
+                <div className="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
+                <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
+                <div className="ml-2 text-xs text-gray-400 font-mono">placement-prep.js</div>
               </div>
 
-              <div className="p-4 font-mono text-sm">
-                <div className="flex items-center gap-2 text-gray-400 mb-4">
-                  <Terminal className="h-4 w-4" />
-                  <span>Weekly Challenge: Algorithmic Showdown</span>
+              <div className="p-3 font-mono text-xs">
+                <div className="flex items-center justify-between text-gray-400 mb-2">
+                  <div className="flex items-center gap-1.5">
+                    <Terminal className="h-3.5 w-3.5" />
+                    <span>Launching Next Semester</span>
+                  </div>
+                  <Badge className="bg-purple-600/30 text-purple-300 border-none text-[10px] py-0">Pre-register</Badge>
                 </div>
-                
-                <div className="space-y-2">
+
+                <div className="space-y-1">
                   <TypewriterCode />
                 </div>
-                
-                <div className="mt-6 border-t border-gray-700 pt-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Trophy className="h-4 w-4 text-amber-400" />
-                    <span className="text-gray-300">KK WAGH College Exclusive</span>
+
+                <div className="-mt-14 border-t border-gray-700 pt-2">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5 text-amber-400" />
+                      <span className="text-gray-300 text-xs">What to expect</span>
+                    </div>
+                    <span className="text-[10px] text-purple-300">Full Roadmap</span>
                   </div>
-                  <p className="text-xs text-gray-400 mb-3">
-                    This leaderboard is exclusively for KK WAGH College students. Verify your college email to participate.
-                  </p>
-                  <div className="bg-purple-900/30 rounded p-3 border border-purple-800/50">
-                    <div className="text-amber-300 mb-1">{'function checkEligibility(student) {'}</div>
-                    <div className="pl-4 text-gray-300">{'  if (student.email.endsWith("@kkwagh.edu.in")) {'}</div>
-                    <div className="pl-8 text-green-400">{'    return "Eligible for leaderboard";'}</div>
-                    <div className="pl-4 text-gray-300">{'  } else {'}</div>
-                    <div className="pl-8 text-red-400">{'    return "Contact college admin";'}</div>
-                    <div className="pl-4 text-gray-300">{'  }'}</div>
-                    <div className="text-amber-300">{'}'}</div>
+
+                  <div className="bg-purple-900/30 rounded p-1.5 border border-purple-800/50 text-[10px]">
+                    <div className="grid grid-cols-12 gap-1 mb-1 text-gray-400">
+                      <div className="col-span-7">Feature</div>
+                      <div className="col-span-5">Benefit</div>
+                    </div>
+                    <div className="grid grid-cols-12 gap-1 py-0.5 border-b border-gray-700">
+                      <div className="col-span-7 text-white">Weekly Year-wise DSA Contests</div>
+                      <div className="col-span-5 text-green-400">Placement Preparation</div>
+                    </div>
+                    <div className="grid grid-cols-12 gap-1 py-0.5 border-b border-gray-700">
+                      <div className="col-span-7 text-white">Top 3 on leaderboard</div>
+                      <div className="col-span-5 text-green-400">Paid Internship & Exciting Prizes</div>
+                    </div>
+                    <div className="grid grid-cols-12 gap-1 py-0.5">
+                      <div className="col-span-7 text-white">Specialization Paths</div>
+                      <div className="col-span-5 text-green-400">Career Growth</div>
+                    </div>
                   </div>
-                  <div className="text-center mt-4">
-                    <Button variant="outline" size="sm" className="border-purple-700 text-purple-300 hover:bg-purple-900/30 text-xs">
-                      Start Challenge Now
+
+                  <div className="mt-2 flex justify-between items-center">
+                    <div className="text-[10px] text-gray-400">
+                      <span className="text-purple-300">15</span> companies' questions available
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-purple-700 text-purple-300 hover:bg-purple-900/30 text-[10px] py-0.5 px-2"
+                    >
+                      Early Access
                     </Button>
                   </div>
                 </div>

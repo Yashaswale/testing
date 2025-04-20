@@ -20,7 +20,7 @@ export function Team() {
   ];
 
   return (
-    <footer className="w-full bg-black border-gray-800 py-12">
+    <footer id="team" className="w-full bg-black border-gray-800 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-white mb-2">Meet Our Team</h2>

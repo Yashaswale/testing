@@ -33,7 +33,7 @@ const CheckIcon = () => {
 export function Features() {
   return (
     
-    <section className="w-full bg-black py-16 md:py-24">
+    <section id="about" className="w-full bg-black py-16 md:py-24">
       <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Placement Preparation, <span className="text-purple-400">Simplified</span>
